@@ -1,0 +1,20 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.image-and-radio {
+    display: none;
+}
+
+
+div.image-and-radio:has(input:checked) {
+    display: flex;
+    justify-content: center;
+}
+
+div.list-item:hover .image-and-radio {
+    display: flex;
+    justify-content: center;
+}
