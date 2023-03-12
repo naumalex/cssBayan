@@ -2,27 +2,33 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 
-div.image-and-radio {
+.list-item-image {
     display: none;
+    animation-name: image-animation;
+    animation-duration: 1s;
 }
 
-
-div.image-and-radio:has(input:checked) {
+.image-and-radio {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
-div.list-item:hover .image-and-radio {
-    display: flex;
-    justify-content: center;
+div.image-and-radio:has(input:checked) .list-item-image {
+    display: inline;
+}
+
+div.list-item:hover .image-and-radio .list-item-image {
+    display: inline;
 }
 
 div.text-and-icon {
     display: flex;
     justify-content: space-between;
-
+    cursor: pointer;
 }
 
 .icon {
@@ -42,11 +48,46 @@ div.list-item:hover .icon {
 
 .accordion:hover .icon {
     display: block;
+    animation-name: icon-animation;
+    animation-duration: 0.5s;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.hidden-input:active {
+    display: block;
 }
 
 body {
     margin: 10%;
     /* Убираем отступы */
+}
+
+
+@keyframes image-animation {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@keyframes icon-animation {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 ​
