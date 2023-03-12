@@ -1,0 +1,140 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-item-image {
+    display: none;
+    max-width: 300px;
+    max-height: 200px;
+    animation-name: image-animation;
+    animation-duration: 1s;
+}
+
+.image-and-radio {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+div.image-and-radio:has(input:checked) .list-item-image {
+    display: inline;
+}
+
+div.list-item:hover .image-and-radio .list-item-image {
+    display: inline;
+}
+
+div.text-and-icon {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+
+.icon {
+    display: none;
+    height: 20px;
+    width: 20px;
+    background-image: url("square-plus.svg");
+    background-repeat: no-repeat;
+}
+
+div.list-item:hover .icon {
+    max-height: 20px;
+    max-width: 20px;
+    background-image: url("square-minus.svg");
+    background-repeat: no-repeat;
+}
+
+.accordion {
+    padding: 10%;
+    background-color: #F5F5EB;
+    border-radius: 2%;
+    cursor: pointer;
+
+}
+
+.accordion:hover .icon {
+    display: block;
+    animation-name: icon-animation;
+    animation-duration: 0.5s;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.hidden-input:active {
+    display: block;
+}
+
+body {
+    margin: 5%;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
+
+@keyframes image-animation {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@keyframes icon-animation {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-family: sans-serif;
+        font-size: x-small;
+    }
+
+    .icon {
+        display: block;
+        max-height: 10px;
+        max-width: 10px;
+        animation-name: icon-animation;
+        animation-duration: 0.5s;
+    }
+
+    .list-item-image {
+        display: none;
+        max-width: 240px;
+        max-height: 160px;
+        animation-name: image-animation;
+        animation-duration: 1s;
+    }
+}
+
+    @media (max-width: 820px) {
+        body {
+            font-family: sans-serif;
+            font-size: smaller;
+        }
+    
+        .icon {
+            display: block;
+            animation-name: icon-animation;
+            animation-duration: 0.5s;
+        }
+}
+
+​
