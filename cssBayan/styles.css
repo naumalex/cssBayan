@@ -18,3 +18,35 @@ div.list-item:hover .image-and-radio {
     display: flex;
     justify-content: center;
 }
+
+div.text-and-icon {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.icon {
+    display: none;
+    height: 20px;
+    width: 20px;
+    background-image: url("square-plus.svg");
+    background-repeat: no-repeat;
+}
+
+div.list-item:hover .icon {
+    height: 20px;
+    width: 20px;
+    background-image: url("square-minus.svg");
+    background-repeat: no-repeat;
+}
+
+.accordion:hover .icon {
+    display: block;
+}
+
+body {
+    margin: 10%;
+    /* Убираем отступы */
+}
+
+​
